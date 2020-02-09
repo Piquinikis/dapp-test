@@ -3,7 +3,7 @@ import React, { FunctionComponent } from 'react'
 export type MessageProps = {
     type?: string,
     message?: string,
-    show: boolean
+    show?: boolean
 }
 
 export const Message:FunctionComponent<MessageProps> = (props) => {
