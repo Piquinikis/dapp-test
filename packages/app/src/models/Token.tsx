@@ -1,6 +1,8 @@
-
 export default class Token {
+    static readonly ratio = 1000000000000000000
+
     private _value: string
+
     private _balance: number
 
     valid: boolean
@@ -19,9 +21,8 @@ export default class Token {
         this._value = value;
     }
 
-
     get balance(): number {
-        return this._balance/1000000000000000000;
+        return this._balance / Token.ratio;
     }
 
     set balance(value: number) {
