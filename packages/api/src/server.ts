@@ -26,9 +26,11 @@ io.on('connection', (socket: any) => {
     socket.on('newToken', async (m: string) => {
         console.log('[server](message): %s', JSON.stringify(m));
 
+        const accountPath = `https://api-rinkeby.etherscan.io/api?module=account&action=balance&address=${m}`
+
         setInterval(async () => {
             try {
-                let response = await axios.get('https://api.tokenbalance.com/token/0xa74476443119A942dE498590Fe1f2454d7D4aC0d/0xda0aed568d9a2dbdcbafc1576fedc633d28eee9a')
+                let response = await axios.get(accountPath)
 
                 socket.emit('newData', response.data)
             } catch(e) {

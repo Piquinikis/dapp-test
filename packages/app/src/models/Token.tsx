@@ -1,14 +1,14 @@
 
 export default class Token {
     private _value: string
+    private _balance: number
 
     valid: boolean
-    // private _balance: Balance
 
     constructor(value: string = '') {
         this._value = value
         this.valid = true
-        // this._balance = new Balance()
+        this._balance = 0
     }
 
     get value(): string {
@@ -17,6 +17,15 @@ export default class Token {
 
     set value(value: string) {
         this._value = value;
+    }
+
+
+    get balance(): number {
+        return this._balance/1000000000000000000;
+    }
+
+    set balance(value: number) {
+        this._balance = value;
     }
 
     validate() {

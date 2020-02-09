@@ -39,7 +39,7 @@ const Balance:FunctionComponent = () => {
                     type: 'success'
                 })
 
-                console.log(data)
+                token.balance = data.result
             });
 
             socketService.on("error", (data: any) => {
@@ -48,8 +48,6 @@ const Balance:FunctionComponent = () => {
                     text: 'We have problems with the service connection. Try again later.',
                     type: 'error'
                 })
-
-                console.log(data)
             });
         } else {
             setMessage({
@@ -83,6 +81,8 @@ const Balance:FunctionComponent = () => {
             </div>
 
             <Message show={message.show} message={message.text} type={message.type} />
+
+            <p><small>Current Balance: </small> <b>{token.balance}</b> ETH</p>
         </>
     )
 }
