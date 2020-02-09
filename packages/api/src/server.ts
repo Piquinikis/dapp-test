@@ -26,7 +26,7 @@ io.on('connection', (socket: any) => {
     socket.on('newToken', async (m: string) => {
         console.log('[server](message): %s', JSON.stringify(m));
 
-        const accountPath = `https://api-rinkeby.etherscan.io/api?module=account&action=balance&address=${m}`
+        const accountPath: string = process.env.API_URL.replace('%s', m)
 
         setInterval(async () => {
             try {
