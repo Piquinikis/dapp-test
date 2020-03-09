@@ -1,13 +1,39 @@
 {
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "scripts": {
-    "build": "lerna run build",
-    "bootstrap": "lerna clean -y && lerna bootstrap --use-workspaces"
+  "name": "@dapp-test/app",
+  "version": "2.0.0",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "@types/jest": "^24.0.0",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-scripts": "3.3.1",
+    "typescript": "~3.7.2",
+    "web3": "^1.2.6"
   },
-  "devDependencies": {
-    "lerna": "^3.20.2"
+  "scripts": {
+    "start": "./node_modules/.bin/react-scripts start",
+    "build": "./node_modules/.bin/react-scripts build",
+    "test": "./node_modules/.bin/react-scripts test",
+    "eject": "./node_modules/.bin/react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
