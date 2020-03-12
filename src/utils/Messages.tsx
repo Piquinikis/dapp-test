@@ -1,32 +1,27 @@
 export default class Messages {
     static readonly CONNECTING = {
-        text: 'Connecting ...',
+        text: 'Getting information ...',
         type: 'info'
     }
 
-    static readonly INCOMING_DATA = {
-        text: 'Receiving information.',
-        type: 'success'
-    }
-
-    static readonly SERVER_ERROR = {
-        text: 'We have problems with the service connection. Try again later.',
+    static readonly NOT_INSTALLED = {
+        text: 'Metamask not installed.',
         type: 'error'
     }
-
-    static readonly INVALID_TOKEN = {
-        text: 'Wrong token format.',
+    
+    static readonly TRANSACTION_OK = {
+        text: 'The transaction has finished successfully.',
+        type: 'success'
+    }
+    
+    static readonly TRANSACTION_ERROR = {
+        text: 'The processing of the transaction has failed..',
         type: 'error'
     }
 
     static readonly TOKEN_NOT_FOUND = {
         text: 'Something it´s wrong in your token, we can´t get their balance information.',
         type: 'warning'
-    }
-
-    static readonly DISCONNECTED_FROM_SERVER = {
-        text: 'Disconnected from server.',
-        type: 'info'
     }
 
 }
