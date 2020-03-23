@@ -17,11 +17,11 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "delegate",
+				"name": "_spender",
 				"type": "address"
 			},
 			{
-				"name": "numTokens",
+				"name": "_value",
 				"type": "uint256"
 			}
 		],
@@ -54,15 +54,15 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "owner",
+				"name": "_from",
 				"type": "address"
 			},
 			{
-				"name": "buyer",
+				"name": "_to",
 				"type": "address"
 			},
 			{
-				"name": "numTokens",
+				"name": "_value",
 				"type": "uint256"
 			}
 		],
@@ -95,14 +95,14 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "tokenOwner",
+				"name": "_owner",
 				"type": "address"
 			}
 		],
 		"name": "balanceOf",
 		"outputs": [
 			{
-				"name": "",
+				"name": "balance",
 				"type": "uint256"
 			}
 		],
@@ -128,11 +128,11 @@
 		"constant": false,
 		"inputs": [
 			{
-				"name": "receiver",
+				"name": "_to",
 				"type": "address"
 			},
 			{
-				"name": "numTokens",
+				"name": "_value",
 				"type": "uint256"
 			}
 		],
@@ -151,11 +151,11 @@
 		"constant": true,
 		"inputs": [
 			{
-				"name": "owner",
+				"name": "_owner",
 				"type": "address"
 			},
 			{
-				"name": "delegate",
+				"name": "_spender",
 				"type": "address"
 			}
 		],
@@ -171,22 +171,16 @@
 		"type": "function"
 	},
 	{
-		"inputs": [
-			{
-				"name": "total",
-				"type": "uint256"
-			}
-		],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "constructor"
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
 	},
 	{
 		"anonymous": false,
 		"inputs": [
 			{
 				"indexed": true,
-				"name": "tokenOwner",
+				"name": "owner",
 				"type": "address"
 			},
 			{
@@ -196,7 +190,7 @@
 			},
 			{
 				"indexed": false,
-				"name": "tokens",
+				"name": "value",
 				"type": "uint256"
 			}
 		],
@@ -218,7 +212,7 @@
 			},
 			{
 				"indexed": false,
-				"name": "tokens",
+				"name": "value",
 				"type": "uint256"
 			}
 		],

@@ -11,10 +11,9 @@ declare const window : any
 declare const web3 : any
 
 const subscribeEvent = (contract: Contract): Promise<Subscription<Log>> => {
+    const options: LogsOptions = contract.events.Transfer().arguments
 
-    const options: LogsOptions = {}
-
-    return web3.eth.subscribe('logs', options)
+    return web3.eth.subscribe('logs', options);
 }
 
 const load = async(): Promise<boolean> => {
@@ -50,7 +49,11 @@ const generateContract = (tokenAddress: string): Contract => {
 
 const getBalance = async(contract: Contract): Promise<string> => {
 	// Call balanceOf function
-	return await web3.eth.getBalance(contract.options.address)
+	let balance = await web3.eth.getBalance(contract.options.address)
+
+    balance = new web3.utils.BN(balance)
+
+    return web3.utils.fromWei(balance, 'ether')
 }
 
 const send1Ether = async(address: string): Promise<PromiEvent<TransactionReceipt | TransactionRevertInstructionError>> => {
